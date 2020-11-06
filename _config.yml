@@ -1,0 +1,38 @@
+# Welcome to Jekyll!
+#
+port: 4001
+# Site settings
+title: Sven-Torben
+description: |
+  engineering software architect    
+  working @ [CONCISO.](https://conciso.de)  
+owner: Sven-Torben Janus # or company name
+address: | 
+  Liebigstr. 44  
+  44139 Dortmund
+email: contact@sven-torben.de
+first_published: 2020 # if migrating another site, the year of your first publish
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://www.sventorben.de" # the base hostname & protocol for your site
+
+aboutme: | 
+  Born and raised in [Dortmund](https://dortmund.de), Germany.  
+  Diploma in computer science from [TU Dortmund](https://ls14-www.cs.tu-dortmund.de/cms/de/home/).
+  
+  Socio-technical architect and DDD practioner.  
+  Currently working as a consultant at [CONCISO.](https://conciso.de).
+  
+  Proud uncle and godfather.  
+  Wannabe guitar hero.
+
+social:
+  twitter: https://twitter.com/sventorben
+  github: https://github.com/sventorben
+  linkedin: https://linkedin.com/in/sventorben
+  xing: https://xing.to/sventorben
+  wordpress: http://conciso.de/blog/author/janus
+  email: mailto:contact@sventorben.de
+# Build settings
+markdown: kramdown
+#sass:
+#  style: compressed

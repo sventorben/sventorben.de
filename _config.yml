@@ -17,11 +17,9 @@ url: "https://www.sventorben.de" # the base hostname & protocol for your site
 
 aboutme: | 
   I’m a software architect focused on Identity & Access Management – with deep roots in DDD and distributed systems.
-  
   Born and raised in [Dortmund](https://dortmund.de), Germany, I hold a diploma in computer science from [TU Dortmund](https://ls14-www.cs.tu-dortmund.de/cms/de/home/). I am partner and work as a consultant at [CONCISO.](https://conciso.de), helping teams build secure, maintainable systems with a clear architectural vision.
   
   For over a decade, I’ve worked at the intersection of architecture, engineering, and strategic tech leadership. My foundation lies in Domain-Driven Design (DDD), the design of distributed systems, and building sustainable software architectures. More recently, I’ve developed a strong focus on Identity and Access Management (IAM), particularly using Keycloak to deliver scalable, secure solutions.
-  
   That said, I don’t see myself as “just” an IAM specialist. I approach IAM as one part of a bigger architectural picture – embedded in systems thinking, business domains, and long-term maintainability.
   
   Outside of work, I’m a proud uncle and godfather – and a wannabe guitar hero when time allows.

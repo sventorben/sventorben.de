@@ -1,37 +1,118 @@
 <head prefix="og: http://ogp.me/ns#">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
-  <meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+
+  <title>{% if page.title %}{{ page.title | escape }} — Sven-Torben Janus{% else %}{{ site.title | escape }}{% endif %}</title>
+  <meta name="description" content="{% if page.description %}{{ page.description | strip_html | strip_newlines | truncate: 160 }}{% elsif
+  page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description | strip_newlines | truncate: 160
+  }}{% endif %}">
+
   <!--[if lte IE 8]><script src="{{ "/js/ie/html5shiv.js" | prepend: site.baseurl }}"></script><![endif]-->
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}" />
   <!--[if lte IE 8]><link rel="stylesheet" href="{{ "/css/ie8.css" | prepend: site.baseurl }}" /><![endif]-->
   <!--[if lte IE 9]><link rel="stylesheet" href="{{ "/css/ie9.css" | prepend: site.baseurl }}" /><![endif]-->
   <link rel="shortcut icon" href="{{ "/images/favicon.ico" | prepend: site.baseurl }}">
-  
-  <!-- Cards / OpenGraph, Twitter etc -->
-	<meta name="twitter:card" content="summary" />
-	<meta name="twitter:site" content="{{ site.twitter_handle }}" />
-	<meta name="twitter:creator" content="{{ site.twitter_handle }}" />
-	<meta property="og:type" content="article" />
-	<meta property="og:locale" content="en_US" />
-	<meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ page.subtitle }}{% endif %}" />
-	<meta property="twitter:description" content="{% if page.description %}{{ page.description }}{% else %}{{ page.subtitle }}{% endif %}" />
-	<meta property="og:url" content="{{ page.url | absolute_url }}" />
 
-	<meta property="og:image" content="{{ "images/sventorben.jpg" | absolute_url }}" />
-	<meta property="og:image:secure_url" content="{{ "images/sventorben.jpg" | absolute_url }}" />
-	<meta property="twitter:image" content="{{ "images/sventorben.jpg" | absolute_url }}" />
+  <!-- Open Graph / Twitter Cards -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@{{ site.twitter_handle }}" />
+  <meta name="twitter:creator" content="@{{ site.twitter_handle }}" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:url" content="{{ page.url | absolute_url }}" />
+  <meta property="og:image" content="{{ "images/sventorben.jpg" | absolute_url }}" />
+  <meta property="og:image:secure_url" content="{{ "images/sventorben.jpg" | absolute_url }}" />
+  <meta property="twitter:image" content="{{ "images/sventorben.jpg" | absolute_url }}" />
 
-	{% if page.layout == "post" or "post" %}
-		<meta property="og:title" content="{{ site.title }}{% if page.title %} - {{ page.title }} {% endif %}" />
-		<meta property="twitter:title" content="{{ site.title }}{% if page.title %} - {{ page.title }} {% endif %}" />
-	{% elsif page.layout == "home" %}
-		<meta property="og:title" content="{{ site.title }}{% if page.landing-title %} - {{ page.landing-title }} {% endif %}" />
-		<meta property="twitter:title" content="{{ site.title }}{% if page.landing-title %} - {{ page.landing-title }} {% endif %}" />
-	{% else %}
-		<meta property="og:title" content="{{ site.title }}" />
-		<meta property="twitter:title" content="{{ site.title }}" />
-	{% endif %}
+  {% if page.layout == "post" %}
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="{{ page.title | escape }} — Sven-Torben Janus" />
+    <meta property="twitter:title" content="{{ page.title | escape }} — Sven-Torben Janus" />
+    <meta property="og:description" content="{% if page.description %}{{ page.description }}{% elsif page.excerpt %}{{ page.excerpt | strip_html
+   | strip_newlines | truncate: 160 }}{% endif %}" />
+    <meta property="twitter:description" content="{% if page.description %}{{ page.description }}{% elsif page.excerpt %}{{ page.excerpt |
+  strip_html | strip_newlines | truncate: 160 }}{% endif %}" />
+  {% elsif page.layout == "home" %}
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{ site.title }}{% if page.landing-title %} — {{ page.landing-title }}{% endif %}" />
+    <meta property="twitter:title" content="{{ site.title }}{% if page.landing-title %} — {{ page.landing-title }}{% endif %}" />
+    <meta property="og:description" content="{{ site.description | strip_newlines | truncate: 160 }}" />
+    <meta property="twitter:description" content="{{ site.description | strip_newlines | truncate: 160 }}" />
+  {% else %}
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{% if page.title %}{{ page.title | escape }} — {% endif %}Sven-Torben Janus" />
+    <meta property="twitter:title" content="{% if page.title %}{{ page.title | escape }} — {% endif %}Sven-Torben Janus" />
+    <meta property="og:description" content="{% if page.description %}{{ page.description }}{% elsif page.subtitle %}{{ page.subtitle }}{% else
+  %}{{ site.description | strip_newlines | truncate: 160 }}{% endif %}" />
+    <meta property="twitter:description" content="{% if page.description %}{{ page.description }}{% elsif page.subtitle %}{{ page.subtitle }}{%
+  else %}{{ site.description | strip_newlines | truncate: 160 }}{% endif %}" />
+  {% endif %}
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Sven-Torben Janus",
+    "alternateName": "sventorben",
+    "url": "https://sventorben.de",
+    "image": "{{ "images/sventorben.jpg" | absolute_url }}",
+    "sameAs": [
+      "https://github.com/sventorben",
+      "https://linkedin.com/in/sventorben",
+      "https://stackoverflow.com/users/sventorben",
+      "https://twitter.com/sventorben",
+      "https://mas.to/@sventorben",
+      "https://medium.com/@sventorben"
+    ],
+    "jobTitle": "Software Architect",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Conciso GmbH",
+      "url": "https://conciso.de"
+    },
+    "knowsAbout": [
+      "Keycloak",
+      "Identity and Access Management",
+      "OAuth2",
+      "OpenID Connect",
+      "Software Architecture",
+      "Domain-Driven Design",
+      "Zero Trust Architecture",
+      "Distributed Systems"
+    ]
+  }
+  </script>
+
+  {% if page.layout == "post" %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "{{ page.title | escape }}",
+    "description": "{% if page.description %}{{ page.description | strip_html }}{% elsif page.excerpt %}{{ page.excerpt | strip_html |
+  strip_newlines | truncate: 160 }}{% endif %}",
+    "url": "{{ page.url | absolute_url }}",
+    "datePublished": "{{ page.date | date_to_xmlschema }}",
+    "dateModified": "{{ page.last_modified_at | default: page.date | date_to_xmlschema }}",
+    "author": {
+      "@type": "Person",
+      "name": "Sven-Torben Janus",
+      "alternateName": "sventorben",
+      "url": "https://sventorben.de"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Sven-Torben Janus",
+      "url": "https://sventorben.de"
+    }{% if page.keycloak_version %},
+    "about": {
+      "@type": "SoftwareApplication",
+      "name": "Keycloak",
+      "softwareVersion": "{{ page.keycloak_version }}"
+    }{% endif %}
+  }
+  </script>
+  {% endif %}
+
 </head>

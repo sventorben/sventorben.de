@@ -10,7 +10,7 @@ owner: Sven-Torben Janus # or company name
 address: | 
   Liebigstr. 44  
   44139 Dortmund
-email: contact@sven-torben.de
+email: contact@sventorben.de
 first_published: 2020 # if migrating another site, the year of your first publish
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://www.sventorben.de" # the base hostname & protocol for your site
@@ -24,13 +24,12 @@ aboutme: |
   
   Outside of work, I’m a proud uncle and godfather – and a wannabe guitar hero when time allows.
 social:
-  twitter: https://twitter.com/sventorben
+  twitter: https://x.com/sventorben
   github: https://github.com/sventorben
   linkedin: https://linkedin.com/in/sventorben
   mastodon: https://mas.to/@sventorben
   medium: https://medium.com/@sventorben
   xing: https://xing.to/sventorben
-  wordpress: http://conciso.de/blog/author/janus
   email: mailto:contact@sventorben.de
 twitter_handle: sventorben
 # Build settings
